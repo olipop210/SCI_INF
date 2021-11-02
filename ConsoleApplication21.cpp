@@ -5,7 +5,6 @@ using namespace std;
 string tekst_wejsciowy, tekst_wyjsciowy;
 int wybor, klucz;
 
-
 string  szyfrowanie_cezara(string tekst_wejsciowy)
 {
 	string temp_string;
@@ -15,11 +14,11 @@ string  szyfrowanie_cezara(string tekst_wejsciowy)
 	{
 		if (tekst_wejsciowy[i] > 96)
 		{
-			char temp;
+			unsigned char temp;
 			temp = tekst_wejsciowy[i] + klucz;
 			if (temp >= 123)
 			{
-				temp = temp % 123 + 97;
+				temp = (temp % 123) + 97;
 			}
 			temp_string += temp;
 		}
@@ -40,11 +39,13 @@ string  deszyfrowanie_cezara(string tekst_wejsciowy)
 	{
 		if (tekst_wejsciowy[i] > 96)
 		{
-			char temp;
+			unsigned char temp;
 			temp = tekst_wejsciowy[i] - klucz;
-			if (temp >= 123)
+			if (temp <= 96)
 			{
-				temp = temp % 123 + 97;
+				char x = (tekst_wejsciowy[i] % 97) + 123;
+				x -= klucz;
+				temp = x;
 			}
 			temp_string += temp;
 		}
@@ -60,30 +61,27 @@ string szyfrowanie_przestawieniowe(string tekst_wejsciowy)
 {
 	string temp_string;
 	char temp1, temp2;
-	for (int i = 0; i < tekst_wejsciowy.size()-1; i += 2)
+	for (int i = 0; i < tekst_wejsciowy.size() - 1; i += 2)
 	{
 		swap(tekst_wejsciowy[i], tekst_wejsciowy[i + 1]);
-
 		temp1 = tekst_wejsciowy[i];
 		temp_string += temp1;
-		temp1 = tekst_wejsciowy[i+1];
+		temp1 = tekst_wejsciowy[i + 1];
+		temp_string += temp1;
+	}
+	if (tekst_wejsciowy.size() % 2 == 1)
+	{
+		temp1 = tekst_wejsciowy[tekst_wejsciowy.size() - 1];
 		temp_string += temp1;
 	}
 	return temp_string;
 }
 
-string szyfrowanie_wszysto(string tekst_wejsciowy)
+string szyfrowanie_wszystko(string tekst_wejsciowy)
 {
 	string temp;
 
 	tekst_wyjsciowy = szyfrowanie_cezara((szyfrowanie_przestawieniowe(tekst_wejsciowy)));
-	return tekst_wyjsciowy;
-}
-string deszyfrowanie_wszystko(string tekst_wejsciowy)
-{
-	string temp;
-
-	tekst_wyjsciowy = deszyfrowanie_cezara((szyfrowanie_przestawieniowe(tekst_wejsciowy)));
 	return tekst_wyjsciowy;
 }
 
@@ -95,7 +93,7 @@ int main()
 	cout << "1. Szyf cezara\n";
 	cout << "2. Szyfr przestawieniowy\n";
 	cout << "3. Szyfr Cezara i przestawieniowy\n";
-	cout << "4. odszyfruj\n";
+	cout << "4. odszyfruj szyfr cezara\n";
 	cin >> wybor;
 	if (wybor == 1)
 	{
@@ -109,30 +107,12 @@ int main()
 	}
 	if (wybor == 3)
 	{
-		tekst_wyjsciowy = szyfrowanie_wszysto(tekst_wejsciowy);
+		tekst_wyjsciowy = szyfrowanie_wszystko(tekst_wejsciowy);
 		cout << "tekst wyjsciowy brzmi: " << tekst_wyjsciowy << endl;
 	}
 	if (wybor == 4)
 	{
-		cout << "co chcesz odszyfrowac? \n";
-		cout << "1. Szyf cezara\n";
-		cout << "2. Szyfr przestawieniowy\n";
-		cout << "3. Szyfr Cezara i przestawieniowy\n";
-		cin >> wybor;
-		if (wybor == 1)
-		{
-			tekst_wyjsciowy = deszyfrowanie_cezara(tekst_wejsciowy);
-			cout << "tekst wyjsciowy brzmi: " << tekst_wyjsciowy << endl;
-		}
-		if (wybor == 2)
-		{
-			tekst_wyjsciowy = szyfrowanie_przestawieniowe(tekst_wejsciowy);
-			cout << "tekst wyjsciowy brzmi: " << tekst_wyjsciowy << endl;
-		}
-		if (wybor == 3)
-		{
-			tekst_wyjsciowy = deszyfrowanie_wszystko(tekst_wejsciowy);
-			cout << "tekst wyjsciowy brzmi: " << tekst_wyjsciowy << endl;
-		}
+		tekst_wyjsciowy = deszyfrowanie_cezara(tekst_wejsciowy);
+		cout << "tekst wyjsciowy brzmi: " << tekst_wyjsciowy << endl;
 	}
 }

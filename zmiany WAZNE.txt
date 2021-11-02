@@ -1,0 +1,4 @@
+W poprzedniej wersji pliku był spory problem. Mianowicie w szyfrowaniu cezarem ze względu na podsługiwanie się char'ami maksymalny zasięg wynosił 128
+Więc w przypadku znaku 'z' i klucza wyższego niż 6 program nie działał poprawnie. 
+Rozwiązaniem tego problemu było zamienienie zmiennych "char temp" na "unsigned char temp", których zasię go 255. 
+Piszę to bo błąd był dość głupi i myślę że lepiej wyjaśnić o co chodziło niż napisać "poprawki błędów w commicie"
