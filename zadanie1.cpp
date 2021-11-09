@@ -33,26 +33,29 @@ string  szyfrowanie_cezara(string tekst_wejsciowy)
 string  deszyfrowanie_cezara(string tekst_wejsciowy)
 {
 	string temp_string;
-	cout << "podaj klucz szyfrowania w zakresie od 1 do 26\n";
-	cin >> klucz;
-	for (int i = 0; i < tekst_wejsciowy.size(); i++)
+	for (int klucz = 0; klucz < 26; klucz++)
 	{
-		if (tekst_wejsciowy[i] > 96)
+		for (int i = 0; i < tekst_wejsciowy.size(); i++)
 		{
-			unsigned char temp;
-			temp = tekst_wejsciowy[i] - klucz;
-			if (temp <= 96)
+			if (tekst_wejsciowy[i] > 96)
 			{
-				char x = (tekst_wejsciowy[i] % 97) + 123;
-				x -= klucz;
-				temp = x;
+				unsigned char temp;
+				temp = tekst_wejsciowy[i] - klucz;
+				if (temp <= 96)
+				{
+					char x = (tekst_wejsciowy[i] % 97) + 123;
+					x -= klucz;
+					temp = x;
+				}
+				temp_string += temp;
 			}
-			temp_string += temp;
+			else
+			{
+				temp_string += tekst_wejsciowy[i];
+			}
 		}
-		else
-		{
-			temp_string += tekst_wejsciowy[i];
-		}
+		cout << "mozliwy tekst: " << temp_string << endl;
+		temp_string = "";
 	}
 	return temp_string;
 }
