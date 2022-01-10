@@ -1,0 +1,80 @@
+
+wyniki dla 1000 elementow
+czas 1 sortowania babelkowego: 0.0415453
+czas 2 sortowania babelkowego: 0.0417989
+czas 3 sortowania babelkowego: 0.0408445
+czas 1 sortowania wstawieniowego: 0.0093037
+czas 2 sortowania wstawieniowego: 0.0094036
+czas 3 sortowania wstawieniowego: 0.0093645
+czas 1 sortowania przez wybor: 0.01819
+czas 2 sortowania przez wybor: 0.0185124
+czas 3 sortowania przez wybor: 0.0180167
+czas 1 sortowania funkcja sort: 0.0006999
+czas 2 sortowania funkcja sort: 0.000695
+czas 3 sortowania funkcja sort: 0.0006937
+czas 1 quick sort: 0.0005902
+czas 2 quick sort: 0.0005931
+czas 3 quick sort: 0.0006124
+czas 1 sortowania przez scalenie: 0.0041208
+czas 2 sortowania przez scalenie: 0.004089
+czas 3 sortowania przez scalenie: 0.0040168
+
+wyniki dla 2000 elementow
+czas 1 sortowania babelkowego: 0.164268
+czas 2 sortowania babelkowego: 0.214837
+czas 3 sortowania babelkowego: 0.173251
+czas 1 sortowania wstawieniowego: 0.0366268
+czas 2 sortowania wstawieniowego: 0.0443826
+czas 3 sortowania wstawieniowego: 0.0377364
+czas 1 sortowania przez wybor: 0.077555
+czas 2 sortowania przez wybor: 0.0772882
+czas 3 sortowania przez wybor: 0.0941919
+czas 1 sortowania funkcja sort: 0.0017568
+czas 2 sortowania funkcja sort: 0.0015806
+czas 3 sortowania funkcja sort: 0.001649
+czas 1 quick sort: 0.0014335
+czas 2 quick sort: 0.0014325
+czas 3 quick sort: 0.0015062
+czas 1 sortowania przez scalenie: 0.008921
+czas 2 sortowania przez scalenie: 0.0104057
+czas 3 sortowania przez scalenie: 0.0083526
+
+wyniki dla 10000 elementow
+czas 1 sortowania babelkowego: 4.26037
+czas 2 sortowania babelkowego: 4.2618
+czas 3 sortowania babelkowego: 4.04571
+czas 1 sortowania wstawieniowego: 0.951562
+czas 2 sortowania wstawieniowego: 0.932168
+czas 3 sortowania wstawieniowego: 0.923468
+czas 1 sortowania przez wybor: 1.80115
+czas 2 sortowania przez wybor: 1.83407
+czas 3 sortowania przez wybor: 1.79783
+czas 1 sortowania funkcja sort: 0.009832
+czas 2 sortowania funkcja sort: 0.0096826
+czas 3 sortowania funkcja sort: 0.009659
+czas 1 quick sort: 0.0091028
+czas 2 quick sort: 0.0090413
+czas 3 quick sort: 0.0092281
+czas 1 sortowania przez scalenie: 0.0775425
+czas 2 sortowania przez scalenie: 0.0755829
+czas 3 sortowania przez scalenie: 0.0756851
+
+wyniki dla 20000 elementow
+czas 1 sortowania babelkowego: 16.3348
+czas 2 sortowania babelkowego: 16.131
+czas 3 sortowania babelkowego: 16.1914
+czas 1 sortowania wstawieniowego: 3.7224
+czas 2 sortowania wstawieniowego: 3.82336
+czas 3 sortowania wstawieniowego: 3.84807
+czas 1 sortowania przez wybor: 7.29882
+czas 2 sortowania przez wybor: 7.12178
+czas 3 sortowania przez wybor: 7.13698
+czas 1 sortowania funkcja sort: 0.0202704
+czas 2 sortowania funkcja sort: 0.0202264
+czas 3 sortowania funkcja sort: 0.0200925
+czas 1 quick sort: 0.0173378
+czas 2 quick sort: 0.0165703
+czas 3 quick sort: 0.01657
+czas 1 sortowania przez scalenie: 0.218477
+czas 2 sortowania przez scalenie: 0.242156
+czas 3 sortowania przez scalenie: 0.227505
