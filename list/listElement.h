@@ -5,4 +5,3 @@ public:
 	int value;
 	listElement * nextElement;
 };
-
