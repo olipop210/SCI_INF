@@ -6,7 +6,7 @@ using namespace std;
 list::list()
 {
 	head = nullptr;
-	tail = nullptr;
+	tail = head;
 }
 
 list::~list()
@@ -16,53 +16,54 @@ list::~list()
 
 void list::add(int wartosc)
 {
-	listElement * temp = new listElement();
-	temp->nextElement = nullptr;
-	temp->value = wartosc;
-	if (head == nullptr)
+	listElement * temp = new listElement();  //tworzy nowy wskaznik
+	temp->previousElement = nullptr;
+	temp->nextElement = nullptr; //nastepny wskaznik = nullptr JEST NA KONCU
+	temp->value = wartosc; //nadaje wartosc wskaznikowi
+	if (head == nullptr) //jesli dodajesz pierwszy element
 	{
 		head = temp;
 		tail = temp;
+		head->previousElement = tail;
 	}
-	else
+	else //jesli sa juz jakies elementy
 	{
+		temp->previousElement = tail;
+		temp->nextElement = head;
 		tail->nextElement = temp;
 		tail = temp;
+		head->previousElement = tail;
 	}
 }
 
 void list::del()
 {
-	if (head == nullptr)
-	{
-		cout << "nie ma co usunac\n";
-	}
-	else
-	{
-
-		listElement *wsk1 = head;
-		listElement *wsk2 = head->nextElement;
-		while (wsk2->nextElement)
-		{
-			wsk1 = wsk1->nextElement;
-			wsk2 = wsk2->nextElement;
-		}
-		wsk1->nextElement = nullptr;
-		tail = wsk1;
-		delete wsk2;
-	}
+	listElement * temp = tail;
+	tail = tail->previousElement;
+	tail->nextElement = head;
+	delete temp;
 }
 
 void list::print()
 {
 	listElement * temp = head;
-	while (temp)
+	while (temp->nextElement != head)
 	{
 		cout << temp->value;
 		temp = temp->nextElement;
 	}
+	cout << tail->value;
 	cout << endl;
 
 }
 
+int list::at(int index)
+{
+	listElement * temp = head;
+	for (int i = 0; i < index; i++)
+	{
+		temp = temp->nextElement;
+	}
+	return temp->value;
+}
 

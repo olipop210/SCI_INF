@@ -10,5 +10,5 @@ public:
 	void add(int wartosc);
 	void del();
 	void print();
+	int at(int index);
 };
-

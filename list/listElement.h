@@ -4,4 +4,5 @@ class listElement
 public:
 	int value;
 	listElement * nextElement;
+	listElement * previousElement;
 };
