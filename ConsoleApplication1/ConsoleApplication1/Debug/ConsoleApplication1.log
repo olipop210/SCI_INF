@@ -1,0 +1,3 @@
+﻿  ConsoleApplication1.cpp
+c:\users\temp.sci.001\source\repos\consoleapplication1\consoleapplication1\consoleapplication1.cpp(32): warning C4018: "<": niezgodność typu ze znakiem/bez znaku
+  ConsoleApplication1.vcxproj -> c:\users\temp.sci.001\source\repos\ConsoleApplication1\Debug\ConsoleApplication1.exe
